@@ -1,0 +1,17 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+div {
+  box-sizing: border-box;
+}
+ul li,
+ol li {
+  list-style: none;
+}
+
+:root{
+  $primary-color: red;
+}
