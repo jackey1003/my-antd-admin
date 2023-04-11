@@ -1,12 +1,12 @@
 <template>
   <div class="left">
     <el-menu :default-active="defaultPath" class="el-menu-vertical-demo" :collapse-transition="false" :router="true" :collapse="!show" :style="{width:show?'200px':'64px'}" >
-      <NavBar v-for="(item,index) in navList" :key="index" :items="item"></NavBar>
-      <div class="nav_footer" @click="changeIcon" >
+      <NavBar v-for="(item,index) in navList" :key="index" :items="item" :show-text="show"></NavBar>
+    </el-menu>
+    <div class="nav_footer" @click="changeIcon" >
             <i class='iconfont icon-shousuo' v-if="show"></i>
             <i class='iconfont icon-zhankai' v-else ></i>
         </div>
-    </el-menu>
   </div>
 </template>
 <script setup>
@@ -59,16 +59,15 @@ watch(()=>route,(newval)=>{
 <style scoped lang='scss'>
 .left {
   height: 100%;
-  overflow: hidden;
 }
 .el-menu {
-  height: 100%;
   position: relative;
-  overflow: hidden;
-  .nav_footer{
+  height: calc(100% - 100px);
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.nav_footer{
     width: 100%;
-    position: absolute;
-    bottom: 50px;
     height: 46px;
     border-top: 1px solid rgba(0,0,0,.06);
     background: #fff;
@@ -81,5 +80,4 @@ watch(()=>route,(newval)=>{
   .nav_footer:hover i{
     color: rgb(24 144 255);
   }
-}
 </style>

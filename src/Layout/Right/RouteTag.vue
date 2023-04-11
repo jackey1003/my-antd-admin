@@ -80,6 +80,7 @@ const deleteItem = (obj,idx)=>{
     background: #fff;
     border-bottom: 1px solid #d8dce5;
     box-shadow: 0 1px 3px 0 rgb(0 0 0 / 12%), 0 0 3px 0 rgb(0 0 0 / 4%);
+    // position: absolute;
     .item{
     cursor: pointer;
     height: 26px;
